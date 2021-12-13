@@ -1,0 +1,107 @@
+.nav {
+  padding: toRem(50) toRem(25) 0;
+
+  &__links {
+    background: $darkViolet;
+    position: absolute;
+    width: 90%;
+    padding: 2rem 2rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+
+  &__items {
+    flex-direction: column;
+  }
+
+  &__logo {
+    width: toRem(121);
+    height: toRem(33);
+  }
+
+  &__item a {
+    color: $white;
+    font-size: toRem(18);
+    margin-bottom: 2rem;
+    display: inline-block;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  &__btns {
+    border-top: 1px solid $gray;
+
+    .login {
+      color: $white;
+      background: $darkViolet;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+  }
+
+  .btn {
+    padding: toRem(10) toRem(25);
+    font-size: toRem(18);
+    display: block;
+    text-align: center;
+  }
+
+  .hamburger {
+    font-size: toRem(26);
+    cursor: pointer;
+    margin-left: auto;
+    float: right;
+  }
+
+  @include breakpoint-up(large) {
+    display: flex;
+    padding: toRem(50) toRem(175) 0;
+
+    &__links {
+      position: static;
+      background: 0;
+    }
+
+    &__items {
+      flex-direction: row;
+    }
+
+    &__item a {
+      padding-left: 40px;
+      color: $gray;
+      font-size: $font-sm;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    &__btns {
+      background: 0;
+      border: 0;
+      margin-left: 22rem;
+    }
+
+    .btn {
+      padding: toRem(10) toRem(25);
+      font-size: toRem(16);
+      display: inline-block;
+    }
+
+    .login {
+      padding: 0;
+      background: 0;
+      color: $gray;
+      margin: 0;
+      margin-right: 1rem;
+    }
+  }
+}
+
+// 25 10

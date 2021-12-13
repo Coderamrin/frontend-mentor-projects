@@ -1,0 +1,103 @@
+// shorten-bar
+// .shortenBarContainer {
+//   background-color: #f0f0f0;
+// }
+
+.test {
+  position: relative;
+  margin-bottom: -292px;
+
+  @include breakpoint-up(large) {
+    margin-bottom: -179px;
+  }
+}
+
+.shortenBar {
+  @include flex(center, center);
+  flex-direction: column;
+  padding: toRem(25);
+  border-radius: 8px;
+  background: $darkViolet url('../images/bg-shorten-mobile.svg') center
+    no-repeat;
+  background-size: cover;
+
+  @include breakpoint-up(large) {
+    background-image: url('../images/bg-shorten-desktop.svg');
+    padding: toRem(50) toRem(60);
+    flex-direction: row;
+  }
+
+  input {
+    width: 100%;
+    padding: toRem(15) toRem(15);
+    margin-bottom: toRem(20);
+    font-size: $font-med;
+    border-radius: 8px;
+
+    @include breakpoint-up(large) {
+      width: 70%;
+      margin: 0;
+      border-color: $white;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: toRem(10) 0;
+    display: inline-block;
+
+    @include breakpoint-up(large) {
+      width: 20%;
+      padding: toRem(13) 0;
+      margin-left: toRem(25);
+      border-radius: 8px;
+    }
+  }
+}
+
+// result
+.result {
+  @include flex(space-between);
+  background: $white;
+  flex-direction: column;
+  padding: toRem(20);
+  border-radius: 8px;
+  margin-top: 1rem;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+  }
+
+  .original__url {
+    color: #000;
+    border-bottom: 1px solid $gray;
+    padding: toRem(16) 0;
+
+    @include breakpoint-up(large) {
+      border: 0;
+    }
+  }
+
+  &__url {
+    color: $cyan;
+    padding: toRem(16) 0;
+  }
+
+  p,
+  a {
+    width: 100%;
+  }
+
+  .result__url {
+    margin-left: 20px; 
+  }
+
+  .btn {
+    text-align: center;
+    padding: toRem(10) 0;
+    @include breakpoint-up(large) {
+      width: 50%;
+    }
+  }
+}

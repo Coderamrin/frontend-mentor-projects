@@ -1,0 +1,64 @@
+// statistic
+.statistic {
+  background: hsl(0, 0%, 94%);
+  padding-top: 16rem;
+  padding-bottom: 6.875rem;
+  text-align: center;
+
+  &__top {
+    max-width: 500px;
+    padding-bottom: 80px;
+
+    h2 {
+      padding-bottom: toRem(30);
+      padding-top: toRem(180);
+    }
+
+    p {
+      padding-bottom: toRem(55);
+    }
+  }
+
+  &__bottom {
+    @include flex();
+    flex-direction: column;
+    gap: toRem(30);
+
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 50px 25px;
+  padding-top: 60px;
+  border-radius: 5px;
+  position: relative;
+
+  img {
+    background: $darkViolet;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -35px;
+    left: 38%;
+    display: inline-block;
+  }
+
+  h3 {
+    margin-top: toRem(40);
+    margin-bottom: toRem(20);
+    color: $darkViolet;
+  }
+}
+
+.card-1 {
+  margin-top: 50px;
+}
+
+.card-2 {
+  margin-top: 100px; 
+}

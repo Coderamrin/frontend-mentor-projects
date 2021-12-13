@@ -1,0 +1,55 @@
+footer {
+  background: hsl(260, 8%, 14%);
+  padding: 70px 0;
+}
+
+.footer {
+  @include flex(space-between);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  p {
+    margin-bottom: 25px;
+    color: #fff;
+  }
+
+  a {
+    color: hsl(0, 0%, 75%);
+    &:hover {
+      color: hsl(180, 66%, 49%);
+    }
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    @include breakpoint-up(large) {
+      @include flex(space-between);
+      gap: 30px;
+    }
+  }
+
+  &__nav ul {
+    padding: 0;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+    }
+  }
+
+  &__social a {
+    // font-size: 1.5rem;
+    // color: #fff;
+    // margin: 0 5px;
+    margin: 0;
+  }
+}

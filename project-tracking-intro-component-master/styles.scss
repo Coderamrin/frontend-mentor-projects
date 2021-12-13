@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+$red: hsl(0, 100%, 68%);
+$veryDarkBlue: hsl(230, 29%, 20%);
+$darkGrayishBlue: hsl(230, 11%, 40%);
+$grayishBlue: hsl(231, 7%, 65%);
+$lightGrayishBlue: hsl(207, 33%, 95%);
+
+@mixin breakpoint($size: 800px) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+body {
+  color: $veryDarkBlue;
+  font-family: 'Barlow', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $veryDarkBlue;
+}
+
+.hamburger {
+  cursor: pointer;
+  .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: $veryDarkBlue;
+    margin: 6px 0;
+  }
+
+  @include breakpoint() {
+    display: none;
+  }
+}
+
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &--small {
+    background: $veryDarkBlue;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5rem;
+    text-align: center;
+  }
+
+  &--red {
+    background: $red;
+  }
+
+  &--white {
+    color: $grayishBlue;
+  }
+}
+
+.nav {
+  padding: 40px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint() {
+    padding: 40px 100px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: -100%;
+    top: 15%;
+    background-color: #fff;
+    width: calc(100% - 35px);
+    text-align: center;
+    padding-top: 25px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+
+    a {
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .dot-line {
+      width: 85%;
+      height: 1px;
+      display: block;
+      background-color: $grayishBlue;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+
+    :last-child {
+      color: $grayishBlue;
+    }
+
+    @include breakpoint() {
+      position: static;
+      flex-direction: row;
+      width: auto;
+      padding-top: 0;
+      background: 0;
+      box-shadow: none;
+
+      a {
+        margin-bottom: 0;
+        margin: 0 25px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .dot-line {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin: 0;
+      }
+    }
+  }
+
+  .show {
+    left: 20px;
+  }
+}
+
+// hero
+.hero {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+
+  @include breakpoint() {
+    flex-direction: row;
+  }
+
+  &__top {
+    height: 50vh;
+    width: 100%;
+    background: url('../images/illustration-devices.svg') no-repeat;
+    background-size: cover;
+    order: 1;
+
+    &::before {
+      content: '';
+      height: 80vh;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      background: $lightGrayishBlue;
+      border-bottom-left-radius: 50px;
+      z-index: -1;
+
+      @include breakpoint() {
+        top: -30%;
+        left: 50%;
+        width: 50%;
+      }
+    }
+
+    @include breakpoint() {
+      order: 2;
+      width: 45%;
+      height: 60vh;
+      margin-left: auto;
+      // background-size: 900px 100%;
+    }
+  }
+
+  &__bottom {
+    padding: 100px 40px;
+    order: 2;
+
+    @include breakpoint() {
+      padding: 100px;
+      // padding-right: 200px;
+      order: 1;
+      padding-top: 0;
+    }
+  }
+
+  &__subtitle {
+    color: $grayishBlue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    padding: 15px;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    word-spacing: 5px;
+  }
+}

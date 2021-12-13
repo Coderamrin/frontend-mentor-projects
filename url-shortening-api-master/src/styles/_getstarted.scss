@@ -1,0 +1,22 @@
+// get started
+.getstarted {
+  background: $darkViolet url('../images//bg-boost-desktop.svg') center
+    no-repeat;
+  background-size: cover;
+  padding: toRem(90) 0;
+  text-align: center;
+
+  h2 {
+    color: $white;
+    padding-bottom: toRem(20);
+  }
+
+  &__btn {
+    // margin-top: 5rem;
+    display: inline-block;
+  }
+}
+
+.getstarted-title {
+  margin-bottom: 1rem;
+}

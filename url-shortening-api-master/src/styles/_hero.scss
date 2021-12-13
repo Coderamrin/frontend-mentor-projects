@@ -1,0 +1,58 @@
+// hero styles
+.hero {
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    @include flex(space-between, center);
+    text-align: left;
+  }
+
+  &__img {
+    height: 50vh;
+    width: 100%;
+    margin: toRem(27) 0 toRem(50) toRem(25);
+    background-image: url('../images/illustration-working.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up(large) {
+      width: 90%;
+      height: toRem(450);
+      position: relative;
+      order: 2;
+      left: 110px;
+      top: -15px;
+    }
+  }
+
+  &__text {
+    h1 {
+      color: $veryDarkBlue;
+      font-size: toRem(32);
+      line-height: 1.2;
+      margin-bottom: toRem(25);
+
+      @include breakpoint-up(large) {
+        font-size: $font-lg;
+        margin-bottom: toRem(22);
+      }
+    }
+
+    p {
+      margin-bottom: toRem(32);
+      @include breakpoint-up(large) {
+        margin-bottom: toRem(40);
+      }
+    }
+
+    @include breakpoint-up(large) {
+      order: 1;
+      padding-left: toRem(170);
+    }
+  }
+
+  &__btn {
+    margin-bottom: toRem(160);
+    display: inline-block;
+  }
+}
