@@ -1,0 +1,62 @@
+.hero {
+  @include breakpoint-up(large) {
+    @include flex(space-between, center);
+  }
+
+  &__img {
+    height: 50vh;
+    background-image: url('../images/image-mockups.png'),
+      url('../images/bg-intro-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 72%, cover;
+    background-position: bottom -18px center, bottom -100px center;
+
+    @include breakpoint-up(large) {
+      flex: 2;
+      height: 80vh;
+      order: 2;
+      background-image: url('../images/bg-intro-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: 119%;
+      background-position: right -194px bottom -68px;
+      z-index: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 140vh;
+        width: 80.5%;
+        position: relative;
+        top: -170px;
+        right: -155px;
+        background: url(../images/image-mockups.png) no-repeat;
+        z-index: -10;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: toRem(42);
+    padding-bottom: toRem(80);
+    flex: 1;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      padding: 0;
+      padding-left: 160px;
+    }
+
+    h1 {
+      font-size: toRem(30);
+      font-weight: 300;
+      margin-bottom: toRem(25);
+    }
+
+    p {
+      color: $grayishBlue;
+      line-height: 1.5;
+      margin-bottom: toRem(32);
+    }
+  }
+}

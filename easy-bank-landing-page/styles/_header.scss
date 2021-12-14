@@ -1,0 +1,131 @@
+.hamburger {
+  cursor: pointer;
+  span {
+    display: block;
+    width: 23px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: $darkBlue;
+  }
+
+  span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(2) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(3) {
+    top: 36px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  &.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+
+  &.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
+  padding: 20px;
+  @include flex(space-between, center);
+  background-color: $white;
+
+  &__links {
+    position: absolute;
+    top: 90px;
+    width: calc(100% - 40px);
+    background: rgb(202, 202, 202);
+    text-align: center;
+    padding: toRem(35) 0;
+    border-radius: 10px;
+
+    a {
+      font-size: toRem(18);
+      display: block;
+      color: $darkBlue;
+      position: relative;
+
+      @include breakpoint-up(large) {
+        font-size: toRem(14);
+        margin-left: toRem(30);
+
+        &:hover::after {
+          position: absolute;
+          top: 50px;
+          content: '';
+          width: 100%;
+          height: 5px;
+          display: block;
+          background-color: $limeGreen;
+        }
+      }
+    }
+
+    :not(:last-child) {
+      margin-bottom: toRem(30);
+
+      @include breakpoint-up(large) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      display: flex;
+      position: static;
+      width: auto;
+      padding: 0;
+      background: 0;
+    }
+  }
+
+  &__btn {
+  }
+
+  @include breakpoint-up(large) {
+    padding: toRem(23) toRem(160);
+  }
+
+  .show {
+    display: block;
+  }
+}
