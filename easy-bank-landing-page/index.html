@@ -15,6 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./dist/styles.css" />
 
     <title>Frontend Mentor | Easybank landing page</title>
@@ -58,16 +65,17 @@
         </div>
       </section>
 
-      <section class="about">
-        <div class="about__top">
+      <section class="why">
+        <div class="why__top">
           <h2>Why choose Easybank?</h2>
           <p>
             We leverage Open Banking to turn your bank account into your
-            financial hub. Control your finances like never before.
+            financial hub. <br />
+            Control your finances like never before.
           </p>
         </div>
 
-        <div class="about__bottom">
+        <div class="why__bottom">
           <div class="service">
             <img src="./images/icon-online.svg" alt="online banking icon" />
             <h3>Online Banking</h3>
@@ -102,42 +110,83 @@
           </div>
         </div>
       </section>
+
+      <section class="articles">
+        <h2>Latest Articles</h2>
+
+        <div class="articles__container">
+          <div class="article card">
+            <img src="./images/image-currency.jpg" alt="currency" />
+            <span class="subtitle"> By Claire Robinson </span>
+            <h3>Receive money in any currency with no fees</h3>
+            <p>
+              The world is getting smaller and we’re becoming more mobile. So
+              why should you be forced to only receive money in a single …
+            </p>
+          </div>
+
+          <div class="article card">
+            <img src="./images/image-restaurant.jpg" alt="restaurant" />
+            <span> By Wilson Hutton </span>
+            <h3>Treat yourself without worrying about money</h3>
+            <p>
+              Our simple budgeting feature allows you to separate out your
+              spending and set realistic limits each month. That means you …
+            </p>
+          </div>
+
+          <div class="article card">
+            <img src="./images/image-plane.jpg" alt="plane" />
+            <span> By Wilson Hutton </span>
+            <h3>Take your Easybank card wherever you go</h3>
+            <p>
+              We want you to enjoy your travels. This is why we don’t charge any
+              fees on purchases while you’re abroad. We’ll even show you …
+            </p>
+          </div>
+          <div class="article card">
+            <img src="./images/image-confetti.jpg" alt="confetti" />
+            <span> By Claire Robinson </span>
+            <h3>Our invite-only Beta accounts are now live!</h3>
+            <p>
+              After a lot of hard work by the whole team, we’re excited to
+              launch our closed beta. It’s easy to request an invite through the
+              site ...
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-    <!--
-  Latest Articles
+    <footer class="footer">
+      <section class="footer__left">
+        <div>
+          <img src="./images/logo-whilte.svg" alt="easybank" />
+          <div class="socialIcons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-reddit"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-github"></i>
+          </div>
+        </div>
 
-  By Claire Robinson
-  Receive money in any currency with no fees
-  The world is getting smaller and we’re becoming more mobile. So why should you be 
-  forced to only receive money in a single …
+        <div class="footer__links">
+          <a href="#"> About Us</a>
+          <a href="#"> Contact</a>
+          <a href="#"> Blog</a>
+        </div>
 
-  By Wilson Hutton
-  Treat yourself without worrying about money
-  Our simple budgeting feature allows you to separate out your spending and set 
-  realistic limits each month. That means you …
-
-  By Wilson Hutton
-  Take your Easybank card wherever you go
-  We want you to enjoy your travels. This is why we don’t charge any fees on purchases 
-  while you’re abroad. We’ll even show you …
-
-  By Claire Robinson
-  Our invite-only Beta accounts are now live!
-  After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-  It’s easy to request an invite through the site ...
-
-  
-
-  About Us
-  Contact
-  Blog
-  Careers
-  Support
-  Privacy Policy
-
-  Request Invite
-
-  © Easybank. All Rights Reserved -->
+        <div class="footer__links">
+          <a href="#"> Careers </a>
+          <a href=""> Support </a>
+          <a href=""> Privacy Policy </a>
+        </div>
+      </section>
+      <section class="footer__right">
+        <a href="#" class="btn footer__btn"> Request Invite </a>
+        <p>© Easybank. All Rights Reserved</p>
+      </section>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

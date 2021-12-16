@@ -1,0 +1,44 @@
+.why {
+  background: $lightGrayishBlue;
+  text-align: center;
+  padding: toRem(65) toRem(35);
+
+  @include breakpoint-up(large) {
+    text-align: left;
+    padding: 0;
+    padding-top: toRem(108);
+  }
+
+  &__top {
+    @include breakpoint-up(large) {
+      padding: 0 toRem(160);
+    }
+    margin-bottom: toRem(55);
+
+    h2 {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__bottom {
+    img,
+    p,
+    h3 {
+      margin-bottom: 28px;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 0 toRem(160);
+      padding-bottom: toRem(108);
+      @include flex(space-between);
+
+      :not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

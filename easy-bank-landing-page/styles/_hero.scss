@@ -8,7 +8,7 @@
     background-image: url('../images/image-mockups.png'),
       url('../images/bg-intro-mobile.svg');
     background-repeat: no-repeat, no-repeat;
-    background-size: 72%, cover;
+    background-size: 85%, cover;
     background-position: bottom -18px center, bottom -100px center;
 
     @include breakpoint-up(large) {
@@ -28,8 +28,9 @@
         width: 80.5%;
         position: relative;
         top: -170px;
-        right: -155px;
+        right: -175px;
         background: url(../images/image-mockups.png) no-repeat;
+        background-size: 110%;
         z-index: -10;
       }
     }
@@ -51,6 +52,10 @@
       font-size: toRem(30);
       font-weight: 300;
       margin-bottom: toRem(25);
+
+      @include breakpoint-up(large) {
+        font-size: toRem(45);
+      }
     }
 
     p {

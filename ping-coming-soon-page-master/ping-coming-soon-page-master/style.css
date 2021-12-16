@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 160px 50px 70px 50px;
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+header img {
+  margin-bottom: 70px;
+}
+
+main img {
+  width: 100%;
+  margin-bottom: 260px;
+}
+
+h1 {
+  margin-bottom: 45px;
+  font-weight: normal;
+  color: hsl(0, 0%, 59%);
+}
+
+span {
+  font-weight: bold;
+  color: black;
+}
+
+main p {
+  margin-bottom: 70px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 20px;
+  color: hsl(223, 100%, 88%);
+  border-color: hsl(223, 100%, 88%);
+  font-size: 1rem;
+}
+
+.btn {
+  margin-bottom: 129px;
+  background-color: hsl(223, 87%, 63%);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+input,
+.btn {
+  padding: 30px;
+  border-radius: 5rem;
+}
+
+.social_icons {
+  margin-bottom: 60px;
+}
+
+.fab {
+  color: hsl(223, 87%, 63%);
+  border: 1px solid hsl(223, 100%, 88%);
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+footer p {
+  color: hsl(0, 0%, 59%);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    width: 944px;
+    margin: 0 auto;
+  }
+
+  .form {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  input,
+  .btn {
+    padding: 20px;
+    height: 56%;
+  }
+
+  input {
+    width: 60%;
+  }
+  .btn {
+    width: 20%;
+    display: inline-block;
+    margin-left: 20px;
+  }
+}

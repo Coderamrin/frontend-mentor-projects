@@ -17,10 +17,29 @@ body {
   margin: 0;
   padding: 0;
   font-size: toRem(18);
+  // overflow-x: hidden;
+  color: $grayishBlue;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 a {
   text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: $darkBlue;
+}
+
+h2 {
+  font-size: toRem(30);
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 500;
 }
 
 // utilities
@@ -40,6 +59,68 @@ button {
 
   &:hover {
     opacity: 0.6;
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  span {
+    display: block;
+    width: 23px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: $darkBlue;
+  }
+
+  span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(2) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  span:nth-child(3) {
+    top: 36px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  &.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+
+  &.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+
+  @include breakpoint-up(large) {
+    display: none;
   }
 }
 

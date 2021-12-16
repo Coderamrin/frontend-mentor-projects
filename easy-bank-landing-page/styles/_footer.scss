@@ -1,0 +1,45 @@
+.footer {
+  background-color: $darkBlue;
+  padding: 40px 100px;
+  text-align: center;
+  @include breakpoint-up(large) {
+    @include flex(space-between, center);
+  }
+
+  &__left {
+    @include breakpoint-up(large) {
+      @include flex(space-between);
+      flex: 2;
+    }
+  }
+
+  &__right {
+      flex: 1;
+  }
+
+  &__links a {
+    display: block;
+  }
+
+  a,
+  i {
+    color: $white;
+
+    &:hover {
+      color: $limeGreen;
+      cursor: pointer;
+    }
+  }
+
+  i {
+    margin-left: 10px;
+  }
+
+  :not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .footer__btn:hover {
+    color: $white;
+  }
+}
