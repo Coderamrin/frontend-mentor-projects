@@ -1,69 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
+$softBlue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$veryDarkBlueMainBG: hsl(217, 54%, 11%);
+$veryDarkBlueCardBG: hsl(216, 50%, 16%);
+$veryDarkBlueLine: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: hsl(217, 54%, 11%);
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 18px;
-  font-family: 'Outfit', sans-serif;
-}
-
-.light {
-  color: #fff;
+  background: $veryDarkBlueMainBG;
+  color: $softBlue;
 }
 
 .card {
-  background-color: hsl(216, 50%, 16%);
-  width: 310px;
-  padding: 20px;
-  color: hsl(0, 0%, 100%);
+  width: 350px;
+  background: $veryDarkBlueCardBG;
+  padding: 30px;
   border-radius: 10px;
 
-  h1 {
-    font-size: 1.5rem;
+  &__img {
+    width: 100%;
+    border-radius: 10px;
   }
 
-  div {
+  &__banner {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    height: 99%;
+    width: 100%;
+    background: $cyan;
+    transition: 0.5s ease;
+    opacity: 0;
+  }
+
+  .overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .overlay:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .priceAndDate {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+    margin-bottom: 20px;
 
-  p {
-    color: hsl(215, 51%, 70%);
+    img {
+      margin-right: 10px;
+    }
   }
 
   .price {
-    color: hsl(178, 100%, 50%);
+    color: $cyan;
   }
 
-  .owner {
-    border-top: 1px solid hsl(215, 32%, 27%);
+  .author {
+    img {
+      width: 50px;
+      height: 50px;
+      border: 2px solid $white;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    display: flex;
+    align-items: center;
+    word-spacing: 5px;
   }
 
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #fff;
-    border-radius: 50%;
+  span,
+  &__title {
+    color: $white;
+
+    &:hover {
+      color: $cyan;
+      cursor: pointer;
+    }
   }
-}
 
-.price-days p {
-  display: flex;
-  align-items: center;
-
-  img {
-    margin-right: 5px;
+  span {
+    margin-left: 2px;
   }
-}
-
-.card-banner {
-  width: 100%;
 }

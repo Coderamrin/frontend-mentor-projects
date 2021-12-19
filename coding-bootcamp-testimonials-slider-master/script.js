@@ -1,17 +1,26 @@
-const testimonialInfos = [
-  {
-    avatar: './images/image-tanya.jpg',
-    name: 'Tanya Sinclair',
-    role: 'UX Engineer',
-    quote: `“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”`,
-  },
+const cards = document.querySelectorAll('.card');
+const imgs = document.querySelectorAll('.author-img');
+const authorImages = document.querySelectorAll('.author-img');
+const toggler = [...document.querySelector('.toggler').children];
 
-  {
-    avatar: './images/image-tanya.jpg',
-    name: 'John Tarkpor',
-    role: 'Junior Front-end Developer',
-    quote: `“ If you want to lay the best foundation possible I’d recommend taking
-        this course. The depth the instructors go into is incredible. I now
-        feel so confident about starting up as a professional developer. ”`,
-  },
-];
+toggler.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const index = e.target.classList.contains('next-card') ? 1 : -1;
+    const activeQuote = document.querySelector('.card.active');
+    const activeAuthor = document.querySelector('.author-img.active');
+
+    let newIndex = [...cards].indexOf(activeQuote) + index;
+
+    if (newIndex < 0) {
+      newIndex = cards.length - 1;
+    }
+    if (newIndex >= cards.length) {
+      newIndex = 0;
+    }
+
+    cards[newIndex].classList.add('active');
+    imgs[newIndex].classList.add('active');
+    activeQuote.classList.remove('active');
+    activeAuthor.classList.remove('active');
+  });
+});
