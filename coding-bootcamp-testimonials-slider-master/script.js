@@ -1,26 +1,29 @@
-const cards = document.querySelectorAll('.card');
-const imgs = document.querySelectorAll('.author-img');
-const authorImages = document.querySelectorAll('.author-img');
-const toggler = [...document.querySelector('.toggler').children];
+const btns = document.querySelectorAll('.toggler img');
+const authorImgs = document.querySelectorAll('.author__img');
+const testimonialBottom = document.querySelectorAll('.testimonial__bottom');
 
-toggler.forEach((btn) => {
+btns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    const index = e.target.classList.contains('next-card') ? 1 : -1;
-    const activeQuote = document.querySelector('.card.active');
-    const activeAuthor = document.querySelector('.author-img.active');
+    const index = e.target.classList.contains('prev') ? -1 : 1;
+    const activeAuthorImg = document.querySelector('.author__img.active');
+    const activeTestimonial = document.querySelector(
+      '.testimonial__bottom.active'
+    ); 
 
-    let newIndex = [...cards].indexOf(activeQuote) + index;
+    let nextIndex = [...authorImgs].indexOf(activeAuthorImg) + index;
 
-    if (newIndex < 0) {
-      newIndex = cards.length - 1;
+    if (nextIndex < 0) {
+      nextIndex = authorImgs.length - 1;
     }
-    if (newIndex >= cards.length) {
-      newIndex = 0;
+
+    if (nextIndex >= authorImgs.length) {
+      nextIndex = 0;
     }
 
-    cards[newIndex].classList.add('active');
-    imgs[newIndex].classList.add('active');
-    activeQuote.classList.remove('active');
-    activeAuthor.classList.remove('active');
+    authorImgs[nextIndex].classList.add('active');
+    testimonialBottom[nextIndex].classList.add('active');
+
+    activeAuthorImg.classList.remove('active');
+    activeTestimonial.classList.remove('active');
   });
 });

@@ -1,0 +1,20 @@
+// variables
+
+//responsive mixins
+@include responsive($size: 600px) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// global styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}

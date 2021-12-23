@@ -6,137 +6,149 @@
   padding: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  height: 100vh;
-}
-
-@mixin responsive($size) {
-  @media (min-width: $size) {
+@mixin responsive {
+  @media (min-width: 600px) {
     @content;
   }
 }
 
-.testimonial {
-  max-width: 400px;
-  background: #fff;
-  padding: 30px;
-
-  @include responsive(800px) {
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  @include responsive() {
     display: flex;
+    justify-content: center;
     align-items: center;
-    max-width: 80%;
+    height: 100vh;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 450px;
+    height: 100px;
+    background: url('/images/pattern-curve.svg') no-repeat;
+
+    @include responsive() {
+      display: none;
+    }
   }
 }
 
-.slider {
-  position: relative;
-  background: url('../images/pattern-bg.svg') center no-repeat;
-  background-size: contain;
-  height: 300px;
+.testimonial {
+  width: 375px;
+  margin: 0 auto;
+  padding-top: 20px;
 
-  @include responsive(800px) {
-    width: 100%;
-    height: 500px;
-    order: 2;
-    flex: 2;
-  }
-
-  .author-img {
-    width: 230px;
-    position: absolute;
-    top: 14%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-
-    @include responsive(800px) {
-      width: 380px;
-    }
-  }
-
-  .toggler {
-    position: absolute;
-    right: 35%;
-    top: 85%;
-    background: #fff;
-    padding: 10px;
-    border-radius: 5rem;
-    width: 55%;
+  @include responsive() {
+    width: 950px;
     display: flex;
-    justify-content: space-between;
-    box-shadow: 0 10px 60px hsl(240, 38%, 50%), 0 15px 12px hsl(240, 38%, 100%);
-
-    button {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0 5px;
-    }
-
-    @include responsive(800px) {
-      right: 50%;
-      width: 16%;
-    }
-  }
-}
-
-.card {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 1.2rem;
-  color: hsl(240, 38%, 20%);
-  line-height: 1.5;
-  position: relative;
-  display: none;
-
-  @include responsive(800px) {
-    order: 1;
-    text-align: left;
-    flex: 1.5;
-    left: 120px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
-  .quote {
-    &::before {
+  &__banner {
+    background: url('/images/pattern-bg.svg') no-repeat;
+    background-size: contain;
+    height: 308px;
+    position: relative;
+    margin-bottom: 63px;
+    @include responsive() {
+      height: 500px;
+      width: 670px;
+      margin: 0;
+    }
+
+    .author__img {
+      width: 254px;
+      height: 250px;
       position: absolute;
-      content: '';
-      width: 150px;
-      height: 80px;
-      background: url('../images/pattern-quotes.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      top: -10%;
-      left: 30%;
+      top: 26px;
+      left: 32px;
+      display: none;
 
-      @include responsive(800px) {
-        left: 8%;
+      @include responsive() {
+        top: 70px;
+        left: 70px;
+        width: 338px;
+        height: 338px;
       }
     }
-  }
 
-  .author {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-    font-size: 1rem;
-    color: rgb(196, 196, 196);
+    .toggler {
+      position: absolute;
+      top: 260px;
+      left: 126px;
+      background-color: #fff;
+      padding: 10px;
+      width: 70px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.15);
 
-    .name {
-      font-weight: bolder;
-      opacity: 1;
-      color: hsl(240, 38%, 20%);
+      img {
+        cursor: pointer;
+      }
+
+      @include responsive() {
+        top: 390px;
+        left: 126px;
+        width: 90px;
+      }
+    }
+
+    .active {
+      display: block;
     }
   }
-}
 
-.author-img.active,
-.active {
-  display: block;
+  &__bottom {
+    text-align: center;
+    padding-top: 63px;
+    color: hsl(240, 38%, 20%);
+    line-height: 1.5;
+    font-size: 1.2rem;
+    display: none;
+
+    @include responsive() {
+      font-size: 1.5rem;
+      width: 650px;
+      text-align: left;
+      padding: 0;
+      position: relative;
+      left: 70px;
+    }
+
+    .quote {
+      position: relative;
+      padding-bottom: 23px;
+      &::before {
+        content: '';
+        display: block;
+        width: 120px;
+        height: 100px;
+        background: url('/images/pattern-quotes.svg') no-repeat;
+        background-position: center;
+        position: absolute;
+        top: -60px;
+        left: 120px;
+      }
+    }
+
+    .author p {
+      display: inline-block;
+    }
+
+    .author__name {
+      font-weight: bold;
+    }
+  }
+
+  .active {
+    display: block;
+  }
 }
