@@ -11,53 +11,49 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
-    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="stylesheet" href="./dist/main.css" />
 
     <title>Frontend Mentor | Project tracking intro component</title>
   </head>
   <body>
-    <header>
-      <nav class="nav">
-        <a href="/"><img src="./images/logo.svg" alt="logo" /></a>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="./images/logo.svg" alt="logo" />
+      </a>
 
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
 
-        <div class="nav__links">
-          <a href="#">Product</a>
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <span class="dot-line"></span>
-          <a href="#">Login</a>
-        </div>
-      </nav>
+      <div class="nav__links">
+        <a href="#"> Product </a>
+        <a href="#"> Features</a>
+        <a href="#"> Pricing </a>
+        <a href="#" class="line"></a>
+        <a href="#" class="gray--text"> Login </a>
+      </div>
     </header>
 
-    <section class="hero">
-      <div class="hero__top"></div>
+    <main class="hero">
+      <section class="hero__img"></section>
+      <section class="hero__info">
+        <h2 class="main__subtitle">
+          <span class="black--btn"> New </span>
+          Monograph Dashboard
+        </h2>
 
-      <div class="hero__bottom">
-        <p class="hero__subtitle">
-          <span class="btn btn--small">New</span> Monograph Dashboard
-        </p>
+        <h1>Powerful insights into your team</h1>
 
-        <h1 class="hero__title">
-          Powerful insights <br />
-          into your team
-        </h1>
-        <p class="hero__description">
-          Project planning and time tracking <br> for agile teams
-        </p>
-        <div class="hero__btns">
-          <a href="#" class="btn hero__btn btn--red">Schedule a demo</a>
-          <a href="#" class="hero__btn btn--white">to see a live preview</a>
+        <p>Project planning and time tracking for agile teams</p>
+
+        <div class="btns">
+          <div class="btn btn--red">Schedule a demo</div>
+          <div class="btn btn--white">to see a live preview</div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <script src="./script.js"></script>
   </body>

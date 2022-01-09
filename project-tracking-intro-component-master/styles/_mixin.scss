@@ -1,0 +1,17 @@
+$breakpoints: (
+  'tablet': '768px',
+  'laptop': '992px',
+  'desktop': '1200px',
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// function to convert px to rem
+@function toRem($value, $context: 16) {
+  $remValue: ($value / $context) + rem;
+  @return $remValue;
+}

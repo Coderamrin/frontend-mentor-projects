@@ -1,0 +1,31 @@
+1. mkdir 
+   create a directory
+
+2. cd 
+   change directory
+
+3. cd ../
+   go to one step back 
+
+4. rmdir
+   remove directory
+
+5. touch
+   create a file 
+
+6. ls 
+   List files and folders in the current directory.
+   
+7. mv 
+   Move the source to target and remove the source
+
+8. rm 
+  Delete file or directory, and you must use –r in case you want to delete a directory
+
+9. date
+   print todays date
+
+10. pwd 
+   print working directory
+   
+   

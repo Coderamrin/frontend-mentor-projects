@@ -26,7 +26,7 @@ $breakpoints-down: (
 }
 
 // helper mixins
-@mixin flex($justifyContent: start, $alignItems: start) {
+@mixin flex($justifyContent: flex-start, $alignItems: flex-start) {
   display: flex;
   justify-content: $justifyContent;
   align-items: $alignItems;

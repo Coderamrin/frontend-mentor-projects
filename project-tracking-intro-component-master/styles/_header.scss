@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+
+  &::after {
+    content: '';
+    width: 50%;
+    height: 80vh;
+    background-color: $LightGrayishBlue;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 4rem;
+
+    @include breakpoint(tablet) {
+      height: 60vh;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    padding: 65px 150px;
+  }
+
+  .nav__links {
+    position: absolute;
+    top: 120px;
+    left: -200%;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    width: 85%;
+    height: 236px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: 0.5s ease;
+
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      @include breakpoint(tablet) {
+        margin-left: 40px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .line {
+      width: 80%;
+      height: 2px;
+      background-color: $GrayishBlue;
+
+      @include breakpoint(tablet) {
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      position: static;
+      height: auto;
+      flex-direction: row;
+      justify-content: flex-end;
+      background: none;
+      margin: 0;
+    }
+  }
+
+  .active {
+    left: 0;
+  }
+}
+
+// hamburger menu styles
+.hamburger {
+  cursor: pointer;
+  .bar {
+    width: 40px;
+    height: 5px;
+    background-color: $VeryDarkBlue;
+    margin: 8px auto;
+    transition: 0.4s ease;
+  }
+
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.active .bar {
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+  }
+
+  &:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+  }
+}

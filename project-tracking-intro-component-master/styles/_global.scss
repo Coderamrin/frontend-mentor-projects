@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+
+body {
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+a,
+button {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+a {
+  color: $VeryDarkBlue;
+}
+
+.gray--text {
+  color: $GrayishBlue;
+}
+
+.black--btn {
+  letter-spacing: 0;
+  background: $VeryDarkBlue;
+  color: $LightGrayishBlue;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5rem;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.btn {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  word-spacing: 5px;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+}
+
+.btn--red {
+  background: $Red;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+.btn--white {
+  color: $GrayishBlue;
+  padding-left: 10px;
+}
